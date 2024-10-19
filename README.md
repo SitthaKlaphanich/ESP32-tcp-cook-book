@@ -55,9 +55,26 @@ if (strncmp(event->topic, "KMITL/Sittha/LED", event->topic_len) == 0) {
 ```
 ![image](https://github.com/user-attachments/assets/9467f1af-87af-45c1-9852-ba18f39939a1)
 
-3.5 เพิ่มลงในฟังชั่น void app_main เพื่อให้กำหนด LED ได้
+3.5 เพิ่มลงในฟังชั่น void app_main เพื่อให้กำหนด LED ได้ หลังจากนั้น build flash 
 ```
 gpio_set_direction(LED, GPIO_MODE_OUTPUT); 
 ```
 ![image](https://github.com/user-attachments/assets/5212e95a-b5d7-4f6d-9ffe-4d41b665812b)
+
+3.5 โหลด mqtt ผ่านเว็บ และเข้า mqtt ที่ได้กำหนดไว้ตั้งแต่ตอนต้น 
+
+https://mqtt-explorer.com/
+
+![image](https://github.com/user-attachments/assets/419cab91-3d34-4ab2-8eb3-1a3b90927231)
+
+3.6 กำหนด path ของ Topic ให้ตรวตามที่กำหนดไว้ใน code 
+
+![image](https://github.com/user-attachments/assets/a6cb69e1-9d57-46e9-b117-061842a2c738)
+
+
+3.7 จากนั้นกด Pubilsh จะได้ตามภาพ
+
+![image](https://github.com/user-attachments/assets/a1ae0bde-a42b-4851-89a8-163598393d60)
+
+
 
