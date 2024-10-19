@@ -54,3 +54,10 @@ if (strncmp(event->topic, "KMITL/Sittha/LED", event->topic_len) == 0) {
         }
 ```
 ![image](https://github.com/user-attachments/assets/9467f1af-87af-45c1-9852-ba18f39939a1)
+
+3.5 เพิ่มลงในฟังชั่น void app_main เพื่อให้กำหนด LED ได้
+```
+gpio_set_direction(LED, GPIO_MODE_OUTPUT); 
+```
+![image](https://github.com/user-attachments/assets/5212e95a-b5d7-4f6d-9ffe-4d41b665812b)
+
