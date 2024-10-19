@@ -76,7 +76,7 @@ https://mqtt-explorer.com/
 
 ![image](https://github.com/user-attachments/assets/a1ae0bde-a42b-4851-89a8-163598393d60)
 
-4 ผลลัพธ์การทำงาน 
+4.ผลลัพธ์การทำงาน 
 
 ON
 
@@ -90,4 +90,5 @@ OFF
 
 ![image](https://github.com/user-attachments/assets/c96f4415-70ee-4886-9e1d-1733d0a64cfb)
 
-
+5.ESP32 สามารถเชื่อมต่อไปยัง MQTT ได้สามารถส่งข้อมูลการทำงานไปยัง MQTT ได้อีกทั้ง MQTT ยังสามารถ สั่งการ
+   ทำงาน ESP32 ได้อีกด้วย
