@@ -18,6 +18,11 @@ MQTT_EVENT_CONNECTED เพื่อให้รู้ว่าเป็นข�
 
 ![image](https://github.com/user-attachments/assets/29bed324-96ad-4b9f-8f4f-dd63f96e76ce)
 
+3.2 เพิ่ม #include "driver/gpio.h" และกำหนดขา LED #define LED  23
+
+![image](https://github.com/user-attachments/assets/b59e9ee6-4e50-47e9-9f1e-b2fb174be501)
+
+
 3.2 กำหนดชื่อของตัวเองใน MQTT_EVENT_CONNECTED
 
 ![image](https://github.com/user-attachments/assets/c1aa5390-e93a-4e8a-8bc2-e70a560bf17d)
@@ -35,4 +40,17 @@ ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
 
 ![image](https://github.com/user-attachments/assets/c32ab21a-d4be-4037-974b-8016d55656eb)
 
-
+3.4 เพิ่มการทำงานเงื่อนไข LED ใช้ strstr ไว้ใช้ค้นหาสตริงหรืออักขระในสตริงที่กำหนด เพิ่ม code ใน case MQTT_EVENT_DATA
+```
+if (strncmp(event->topic, "KMITL/Sittha/LED", event->topic_len) == 0) {
+            printf("Topic matched\r\n" );
+            if (strstr(event->data, "ON") != NULL) {
+                printf("LED ON\r\n" );
+                gpio_set_level(LED, 1); // Turn ON LED
+            } else if (strstr(event->data, "OFF") != NULL) {
+                printf("LED OFF\r\n" );
+                gpio_set_level(LED, 0); // Turn OFF LED
+            }
+        }
+```
+![image](https://github.com/user-attachments/assets/9467f1af-87af-45c1-9852-ba18f39939a1)
